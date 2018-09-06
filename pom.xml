@@ -16,30 +16,7 @@
 	</properties>
 
 
-	<build>
-		<resources>
-			<resource>
-				<directory>src/main/java/resources</directory>
-				<filtering>true</filtering>
-			</resource>
-		</resources>
-		<plugins>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.20</version>
-				<configuration>
-					<suiteXmlFiles>
-						<suiteXmlFile>testng.xml</suiteXmlFile>
-					</suiteXmlFiles>
-				</configuration>
-			</plugin>
-
-		</plugins>
-
-
-	</build>
+	
 
 	<dependencies>
 		<dependency>
@@ -48,6 +25,19 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!--https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+
+<dependency>
+
+    <groupId>org.apache.maven.plugins</groupId>
+
+    <artifactId>maven-surefire-plugin</artifactId>
+
+    <version>2.20</version>
+  
+
+</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
@@ -63,5 +53,132 @@
 			<version>6.14.3</version>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.8.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.8.2</version>
+		</dependency>
+
+		<!-- pom.xml -->
+
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>3.0.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.relevantcodes</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>2.41.2</version>
+		</dependency>
+
+
+
+
+
 	</dependencies>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/java/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		
+
+
+<plugins>			
+<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.20</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+			<groupId>ch.fortysix</groupId>
+			<artifactId>maven-postman-plugin</artifactId>
+			<version>0.1.6</version>
+			<executions>
+				<execution>
+				
+				<id>Report Generation</id>
+				<phase>test</phase>
+				<goals>
+				<goal>send-mail</goal>
+				</goals>
+				<inherited>true</inherited>
+				
+				<configuration>
+					<!-- From Email address -->
+					<from>ansh.anand@gmail.com</from>
+					
+					<!--  Email subject -->
+					<subject>Test Automation Report</subject>
+					
+					<!-- Fail the build if the mail doesn't reach -->
+					<failonerror>true</failonerror>
+					<!-- Email Body Content -->
+                          <htmlMessage>
+                                    <![CDATA[
+                                    <p>New test build triggered!</p>
+                                    <p>Attached html file contains the test result status</p> 
+                                    ]]>
+                          </htmlMessage>
+					
+					<!-- host -->
+					<mailhost>smtp.gmail.com</mailhost>
+					<!-- port of the host -->
+					<mailport>465</mailport>
+					<mailssl>true</mailssl>
+					<mailAltConfig>true</mailAltConfig>
+					
+					<!-- Email Authentication(USername and Password) -->
+					<mailuser>ansh.anand@gmail.com</mailuser>
+					<mailpassword>Kartik@123</mailpassword>
+					
+					<receivers>
+						<!-- To Email address -->
+						<receiver>aanand@brookstone.com</receiver>
+					</receivers>
+					
+					<fileSets>
+					<fileSet>
+						<!-- Report directory Path -->
+						<directory>${basedir}/target/surefire-reports</directory>
+						<includes>
+							<!-- Report file name -->
+							<include>ExtentReportsTestNG.html</include>
+							<include>index.html</include>
+						</includes>
+						<!-- Use Regular Expressions like **/*.html if you want all the html files to send-->
+						</fileSet>
+						
+				
+					</fileSets>				
+				
+				</configuration>
+				</execution>
+			</executions>
+		</plugin>
+
+		</plugins>
+
+
+
+
+
+	</build>
+	
 </project>

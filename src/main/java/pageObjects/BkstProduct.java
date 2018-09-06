@@ -3,8 +3,6 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class BkstProduct {
 
@@ -28,4 +26,9 @@ public class BkstProduct {
 		return driver.findElement(Go_to_chkout);
 	}
 
+	//title 
+		public String title() {
+		String title = driver.getTitle();
+		return title;
+		}
 }

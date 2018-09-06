@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-failed">Suite</span>
+              <span class="suite-name border-passed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Suite">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,21 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Suite">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="UAT.BrookstoneTests.TestCase1" hash-for-method="Login">Login</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -116,7 +102,12 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="UAT.BrookstoneTests.TestCase2" hash-for-method="Login">Login</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="UAT.BrookstoneTests.TestCase1" hash-for-method="TC1">TC1</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="UAT.BrookstoneTests.TestCase2" hash-for-method="TC2">TC2</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -131,50 +122,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">UAT.BrookstoneTests.TestCase1</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="Login">
-                  </a> <!-- Login -->
-                  <span class="method-name">Login</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;brdialog-close invitation-navigation-element&apos;]&quot;}
-  (Session info: chrome=68.0.3440.106)
-  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;WSAANAND2&apos;, ip: &apos;172.10.3.66&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_171&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565498 (ea082db3280dd6..., userDataDir: C:\Users\aanand\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 68.0.3440.106, webStorageEnabled: true}
-Session ID: f7fb5908f7042813ce5bc9433c9ca718
-*** Element info: {Using=xpath, value=//div[@class=&apos;brdialog-close invitation-navigation-element&apos;]}
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy5.click(Unknown Source)
-	at UAT.BrookstoneTests.TestCase1.Login(TestCase1.java:100)
-... Removed 32 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -183,9 +130,24 @@ Session ID: f7fb5908f7042813ce5bc9433c9ca718
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Login">
-                  </a> <!-- Login -->
-                  <span class="method-name">Login</span>
+                  <a name="TC2">
+                  </a> <!-- TC2 -->
+                  <span class="method-name">TC2</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">UAT.BrookstoneTests.TestCase1</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC1">
+                  </a> <!-- TC1 -->
+                  <span class="method-name">TC1</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -200,13 +162,20 @@ Session ID: f7fb5908f7042813ce5bc9433c9ca718
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;Suite&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Test&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;UAT.BrookstoneTests.listeners&quot;/&gt;
+    &lt;listener class-name=&quot;resources.ExtentReporterNG&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;TC#1 Checkout Header - Verify the layout of the header on the checkout pages (Shipping, Billing, Submit Order, Confirmation).&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;UAT.BrookstoneTests.AppTest&quot;/&gt;
-      &lt;class name=&quot;UAT.BrookstoneTests.TestCase2&quot;/&gt;
       &lt;class name=&quot;UAT.BrookstoneTests.TestCase1&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test --&gt;
+  &lt;/test&gt; &lt;!-- TC#1 Checkout Header - Verify the layout of the header on the checkout pages (Shipping, Billing, Submit Order, Confirmation). --&gt;
+  &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;TC#2 Checkout Header - Verify the functionality of header elements on the checkout pages.&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;UAT.BrookstoneTests.TestCase2&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- TC#2 Checkout Header - Verify the functionality of header elements on the checkout pages. --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -218,7 +187,10 @@ Session ID: f7fb5908f7042813ce5bc9433c9ca718
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (3 classes)</span>
+                <span class="test-name">TC#1 Checkout Header - Verify the layout of the header on the checkout pages (Shipping, Billing, Submit Order, Confirmation). (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">TC#2 Checkout Header - Verify the functionality of header elements on the checkout pages. (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -246,18 +218,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'Login')
+data.setCell(0, 1, 'TC2')
 data.setCell(0, 2, 'UAT.BrookstoneTests.TestCase2')
-data.setCell(0, 3, 201423);
+data.setCell(0, 3, 80592);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'Login')
+data.setCell(1, 1, 'TC1')
 data.setCell(1, 2, 'UAT.BrookstoneTests.TestCase1')
-data.setCell(1, 3, 44937);
+data.setCell(1, 3, 47752);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -283,20 +255,34 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">UAT.BrookstoneTests.TestCase2</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">Login</span>
+              <div class="chronological-class-name">UAT.BrookstoneTests.TestCase1</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">initialize</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="test-method">
+                <span class="method-name">TC1</span>
+                <span class="method-start">8023 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">55776 ms</span>
+              </div> <!-- configuration-test after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">UAT.BrookstoneTests.TestCase1</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">UAT.BrookstoneTests.TestCase2</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">initialize</span>
+                <span class="method-start">55880 ms</span>
+              </div> <!-- configuration-test before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">Login</span>
-                <span class="method-start">201426 ms</span>
+                <span class="method-name">TC2</span>
+                <span class="method-start">62250 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">142842 ms</span>
+              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

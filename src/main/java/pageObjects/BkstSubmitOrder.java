@@ -1,11 +1,9 @@
 package pageObjects;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
 public class BkstSubmitOrder {
 
@@ -30,18 +28,17 @@ public class BkstSubmitOrder {
 	public WebElement customerSurvey() {
 		return customerSurvey;
 	}
-	
-	
+
 	@FindBy(xpath = "//a[@href='/s/Brookstone/index']")
 	WebElement backToBrookstone;
 
 	public WebElement backToBrookstone() {
 		return backToBrookstone;
 	}
-	
-	
-	
-	
-	
 
+	//title 
+		public String title() {
+		String title = driver.getTitle();
+		return title;
+		}
 }

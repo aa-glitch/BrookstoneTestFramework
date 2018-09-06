@@ -1,6 +1,5 @@
 package pageObjects;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,4 +23,10 @@ public class BkstShoppingCart {
 		return Checkout;
 	}
 
+	
+	//title 
+		public String title() {
+		String title = driver.getTitle();
+		return title;
+		}
 }

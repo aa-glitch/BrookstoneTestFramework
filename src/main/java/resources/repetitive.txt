@@ -1,0 +1,53 @@
+
+	@BeforeTest
+	public void initialize() throws IOException {
+
+		driver = initializeDriver();
+		log.info("Driver is initialized");
+
+		// 1. Go to Brookstone.com.
+		driver.get(prop.getProperty("urlprod"));
+		driver.manage().window().maximize();
+		log.info("Navigated to Home page");
+
+	}
+	
+
+		BkstChkoutShippingPage sh = new BkstChkoutShippingPage(driver);
+
+		sh.First_Name().sendKeys(prop.getProperty("FirstName"));
+		sh.Last_Name().sendKeys(prop.getProperty("LastName"));
+		sh.Address1().sendKeys(prop.getProperty("Address1"));
+		sh.City().sendKeys(prop.getProperty("City"));
+		sh.Zipcode().sendKeys(prop.getProperty("Zipcode"));
+		sh.Phone().sendKeys(prop.getProperty("Phone"));
+		Thread.sleep(5000);
+		sh.Continue().click();
+
+		
+		BkstChkoutBillingPage bl = new BkstChkoutBillingPage(driver);
+
+		bl.Email().sendKeys(prop.getProperty("Email"));
+		String FullName = prop.getProperty("FirstName") + " " + prop.getProperty("LastName");
+		bl.CardName().sendKeys(FullName);
+		bl.CardNumber().sendKeys(prop.getProperty("VisaCardNo"));
+		bl.CardCVV().sendKeys(prop.getProperty("VisaCardCvv"));
+		bl.dropDown().click();
+		bl.CardExpYear().click();
+
+		bl.ContinueChkout().click();
+		
+		BkstSubmitOrder sb = new BkstSubmitOrder(driver);
+		
+		sb.submitOrder().click();
+		sb.customerSurvey().click();
+		
+		
+		
+@AfterTest
+	public void teardown() {
+
+		driver.close();
+		driver = null;
+
+	}

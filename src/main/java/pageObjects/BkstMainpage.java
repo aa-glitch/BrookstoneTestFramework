@@ -1,7 +1,6 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.By.ByCssSelector;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,33 +16,45 @@ public class BkstMainpage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(className = "ui-button-icon-primary")
-	WebElement closeButton;
-
+	
+	// close pop-up signup message
 	public WebElement closeButton() {
-		return closeButton;
+	// dev05 or production
+		try {
+		By closeButton = By.className("ui-button-icon-primary");
+		return driver.findElement(closeButton);
 	}
-
+	// staging
+	catch(Exception e) {
+		By closeButton = By.xpath("//button[@title='Close']");
+		return driver.findElement(closeButton);
+	}
+	
+	}
+	
+	
+	// ==========================================dev05===========================================================
+	
+	// ==========================================staging=========================================================
+	
 	// Top Advertisement
 	@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/div[1]/div[1]/p[1]/a[1]/picture[1]/img[1]")
-	 WebElement Top1;
+	WebElement Top1;
 
 	public WebElement Top1() {
 		return Top1;
 	}
 
-			
-	
 	// Main Page - 6 Main Categories
 	By ProdLine = By.xpath("/html[1]/body[1]/div[1]/main[1]/div[2]/div[3]/div[1]/div[1]/div[3]/a[1]/img[1]");
-		
+
 	public WebElement ProdLine() {
 		return driver.findElement(ProdLine);
 	}
 
 	// Top Prod1
 	@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]")
-	 WebElement Prod1;
+	WebElement Prod1;
 
 	public WebElement Prod1() {
 		return Prod1;
@@ -65,12 +76,21 @@ public class BkstMainpage {
 		return Prod3;
 	}
 
+	
+	// ==========================================staging=========================================================
+	
 	// Shopping Cart
 	@FindBy(xpath = "//img[@class='cart']")
 	WebElement Cart;
 
 	public WebElement Cart() {
 		return Cart;
+	}
+	
+	//title 
+	public String title() {
+	String title = driver.getTitle();
+	return title;
 	}
 
 }

@@ -1,0 +1,4 @@
+17:24:29.830 [main] INFO  resources.base - Verified 6: Verify that you are taken to the site home page
+17:24:41.845 [main] INFO  resources.base - Verified 11: Verify that you are taken back to the Shopping Cart page.
+17:24:54.000 [main] INFO  resources.base - Verified 15. Verify that you are taken to the My Account Login page.
+17:25:12.528 [main] INFO  resources.base - Verified 15. Verify that you are taken to the My Account Login page.

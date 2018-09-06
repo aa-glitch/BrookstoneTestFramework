@@ -3,8 +3,6 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class BkstChkoutShippingPage {
 
@@ -93,11 +91,10 @@ public class BkstChkoutShippingPage {
 		return driver.findElement(Continue);
 	}
 
-	// input[@id='dwfrm_singleshipping_shippingAddress_addressFields_zip']
-	// input[@id='dwfrm_singleshipping_shippingAddress_addressFields_city']
-	// p[contains(text(),'Select State')]
-	// li[contains(text(),'Alabama')]
-	// input[@id='dwfrm_singleshipping_shippingAddress_addressFields_phone']
-	// div[@id='bottomcheckoutbutton']//span[contains(text(),'Continue Checkout')]
-
+	//title 
+		public String title() {
+		String title = driver.getTitle();
+		return title;
+		}
+	
 }
