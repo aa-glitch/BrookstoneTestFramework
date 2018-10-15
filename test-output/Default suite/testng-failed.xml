@@ -6,6 +6,7 @@
       <class name="UAT.BrookstoneTests.TestCase2">
         <methods>
           <include name="TC2"/>
+          <include name="teardown"/>
           <include name="initialize"/>
         </methods>
       </class> <!-- UAT.BrookstoneTests.TestCase2 -->

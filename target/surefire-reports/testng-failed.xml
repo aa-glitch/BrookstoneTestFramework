@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Suite]">
+<suite thread-count="3" guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Suite]" parallel="methods">
   <listeners>
     <listener class-name="UAT.BrookstoneTests.listeners"/>
     <listener class-name="resources.ExtentReporterNG"/>
   </listeners>
-  <test thread-count="5" verbose="0" name="TC#1 Checkout Header - Verify the layout of the header on the checkout pages (Shipping, Billing, Submit Order, Confirmation).(failed)">
+  <test thread-count="3" verbose="0" name="TC#3 Checkout SubHeader - Verify the display of the checkout subheader on checkout pages (Shipping, Billing, Submit Order, Confirmation)..(failed)" parallel="methods">
+    <groups>
+      <run>
+        <include name="Smoke"/>
+      </run>
+    </groups>
     <classes>
-      <class name="UAT.BrookstoneTests.TestCase1">
+      <class name="UAT.BrookstoneTests.TestCase3">
         <methods>
-          <include name="TC1"/>
-          <include name="teardown"/>
           <include name="initialize"/>
+          <include name="teardown"/>
+          <include name="TC3and4"/>
         </methods>
-      </class> <!-- UAT.BrookstoneTests.TestCase1 -->
+      </class> <!-- UAT.BrookstoneTests.TestCase3 -->
     </classes>
-  </test> <!-- TC#1 Checkout Header - Verify the layout of the header on the checkout pages (Shipping, Billing, Submit Order, Confirmation).(failed) -->
+  </test> <!-- TC#3 Checkout SubHeader - Verify the display of the checkout subheader on checkout pages (Shipping, Billing, Submit Order, Confirmation)..(failed) -->
 </suite> <!-- Failed suite [Suite] -->

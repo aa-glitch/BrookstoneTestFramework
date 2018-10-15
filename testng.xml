@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite">
+<suite name="Suite" parallel="methods" thread-count="3" >
 	<listeners>
 
 		<listener class-name="UAT.BrookstoneTests.listeners" />
@@ -9,8 +9,17 @@
 
 	</listeners>
 	
+	
 	<test
+	
 		name="TC#1 Checkout Header - Verify the layout of the header on the checkout pages (Shipping, Billing, Submit Order, Confirmation).">
+	 <groups>
+<run>  
+ <include name="Smoke"/>
+    
+</run>
+</groups>
+		
 		<classes>
 			<class name="UAT.BrookstoneTests.TestCase1"/>
 			
@@ -19,11 +28,45 @@
 	
 	<test
 		name="TC#2 Checkout Header - Verify the functionality of header elements on the checkout pages.">
-		
+		 <groups>
+<run>  
+ <include name="Smoke"/>
+ 
+</run>
+</groups>
 			<classes>
 						<class name="UAT.BrookstoneTests.TestCase2" />
 		</classes>
 	</test> <!-- Test -->
+
+
+<test
+		name="TC#3and4 Checkout SubHeader - Verify the display of the checkout subheader on checkout pages (Shipping, Billing, Submit Order, Confirmation)..">
+		 <groups>
+<run>  
+ <include name="Smoke"/>
+ 
+</run>
+</groups>
+			<classes>
+						<class name="UAT.BrookstoneTests.TestCase3and4" />
+		</classes>
+	</test> <!-- Test -->
+
+
+<test
+		name="TC#5 Gifts">
+		 <groups>
+<run>  
+ <include name="Smoke"/>
+ 
+</run>
+</groups>
+			<classes>
+						<class name="UAT.BrookstoneTests.TestCase5" />
+		</classes>
+	</test> <!-- Test -->
+
 
 
 </suite> <!-- Suite -->

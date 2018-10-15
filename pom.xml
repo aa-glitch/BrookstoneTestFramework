@@ -29,14 +29,10 @@
 		<!--https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
 
 <dependency>
-
     <groupId>org.apache.maven.plugins</groupId>
-
     <artifactId>maven-surefire-plugin</artifactId>
-
     <version>2.20</version>
-  
-
+    <scope>test</scope>
 </dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -122,7 +118,7 @@
 				
 				<configuration>
 					<!-- From Email address -->
-					<from>ansh.anand@gmail.com</from>
+					<from>brookstonetestautomation@gmail.com</from>
 					
 					<!--  Email subject -->
 					<subject>Test Automation Report</subject>
@@ -145,12 +141,18 @@
 					<mailAltConfig>true</mailAltConfig>
 					
 					<!-- Email Authentication(USername and Password) -->
-					<mailuser>ansh.anand@gmail.com</mailuser>
-					<mailpassword>Kartik@123</mailpassword>
+					<mailuser>brookstonetestautomation@gmail.com</mailuser>
+					<mailpassword>Brookstone1!</mailpassword>
 					
 					<receivers>
 						<!-- To Email address -->
-						<receiver>aanand@brookstone.com</receiver>
+						
+						
+						<receiver>ascott@brookstone.com</receiver>
+						<receiver>mmartini@brookstone.com</receiver>
+						<receiver>appdev@brookstone.com</receiver>
+						
+						
 					</receivers>
 					
 					<fileSets>
@@ -164,6 +166,17 @@
 						</includes>
 						<!-- Use Regular Expressions like **/*.html if you want all the html files to send-->
 						</fileSet>
+							<fileSet>
+						<!-- Report directory Path -->
+						<directory>${basedir}/logs</directory>
+						<includes>
+							<!-- Report file name -->
+							<include>**/*.log</include>
+							
+						</includes>
+						<!-- Use Regular Expressions like **/*.html if you want all the html files to send-->
+						</fileSet>
+						
 						
 				
 					</fileSets>				

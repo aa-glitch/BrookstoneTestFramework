@@ -24,5 +24,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/work/eclipse/eclipse/plugins/org.testng_6.14.2.r201802161450.jar" sourcepath="C:/work/eclipse/eclipse/plugins/org.testng.source_6.14.2.r201802161450.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

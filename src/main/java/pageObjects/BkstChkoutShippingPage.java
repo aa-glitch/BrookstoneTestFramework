@@ -19,6 +19,48 @@ public class BkstChkoutShippingPage {
 		return driver.findElement(logo);
 	}
 
+	By ChkOutHeading = By.xpath("//h1[@class='hide-on-mobile']");
+
+	public WebElement ChkOutHeading() {
+		return driver.findElement(ChkOutHeading);
+	}
+
+	By ShipColor = By.xpath("//div[@class='step-1 active']");
+
+	public WebElement ShipColor() {
+		return driver.findElement(ShipColor);
+	}
+
+	By BillColor = By.xpath("//div[@class='step-2 inactive']");
+
+	public WebElement BillColor() {
+		return driver.findElement(BillColor);
+	}
+
+	By SubmitColor = By.xpath("//div[@class='step-3 inactive']");
+
+	public WebElement SubmitColor() {
+		return driver.findElement(SubmitColor);
+	}
+
+	By ShipProgress = By.xpath("//span[@class='text'][contains(text(),'Shipping')]");
+
+	public WebElement ShipProgress() {
+		return driver.findElement(ShipProgress);
+	}
+
+	By BillProgress = By.xpath("//span[@class='text'][contains(text(),'Billing')]");
+
+	public WebElement BillProgress() {
+		return driver.findElement(BillProgress);
+	}
+
+	By SubmitProgress = By.xpath("//span[contains(text(),'Submit Order')]");
+
+	public WebElement SubmitProgress() {
+		return driver.findElement(SubmitProgress);
+	}
+
 	By BacktoCart = By.xpath("//div[@class='back-to-cart']//a");
 
 	public WebElement BacktoCart() {
@@ -79,6 +121,12 @@ public class BkstChkoutShippingPage {
 		return driver.findElement(State);
 	}
 
+	By SsState = By.xpath("//li[contains(text(),'Colorado')]");
+
+	public WebElement SsState() {
+		return driver.findElement(SsState);
+	}
+
 	By Phone = By.xpath("//input[@id='dwfrm_singleshipping_shippingAddress_addressFields_phone']");
 
 	public WebElement Phone() {
@@ -91,10 +139,22 @@ public class BkstChkoutShippingPage {
 		return driver.findElement(Continue);
 	}
 
-	//title 
-		public String title() {
+	By TwodayShip = By.xpath("//fieldset//div[2]//div[1]//ins[1]");
+
+	public WebElement TwodayShip() {
+		return driver.findElement(TwodayShip);
+	}
+
+	By NextdayShip = By.xpath("//fieldset//div[3]//div[1]//ins[1]");
+
+	public WebElement NextdayShip() {
+		return driver.findElement(NextdayShip);
+	}
+
+	// title
+	public String title() {
 		String title = driver.getTitle();
 		return title;
-		}
-	
+	}
+
 }

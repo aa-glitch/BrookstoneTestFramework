@@ -5,6 +5,8 @@ import java.io.IOException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -25,20 +27,20 @@ public class TestCase2 extends base {
 
 	public static Logger log = LogManager.getLogger(base.class.getName());
 
-	@BeforeTest
+	@BeforeTest(groups = { "Smoke" })
 	public void initialize() throws IOException {
 
 		driver = initializeDriver();
-		log.info("Driver is initialized");
+		// log.info("Driver is initialized");
 
 		// 1. Go to Brookstone.com.
-		driver.get(prop.getProperty("urlstag"));
-		driver.manage().window().maximize();
-		log.info("Navigated to Home page");
+		String env = prop.getProperty("environment");
+		driver.get(prop.getProperty(env));
+		// log.info("Navigated to Home page");
 
 	}
 
-	@Test
+	@Test(groups = { "Smoke" })
 	public void TC2() throws InterruptedException {
 
 		// 2. Navigate to any product detail page, select any applicable product options
@@ -46,7 +48,7 @@ public class TestCase2 extends base {
 		// product.
 		BkstMainpage rd = new BkstMainpage(driver);
 		rd.closeButton().click();
-		
+
 		rd.Top1().click();
 
 		BkstProductsOutline ol = new BkstProductsOutline(driver);
@@ -56,7 +58,9 @@ public class TestCase2 extends base {
 		// to go directly to checkout.
 		BkstProduct pd = new BkstProduct(driver);
 		pd.Add_to_cart().click();
-		Thread.sleep(5000);
+
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(pd.Go_to_chkout()));
 		pd.Go_to_chkout().click();
 
 		// 4. At the Secure Checkout landing page, click the button to check out as a
@@ -68,9 +72,9 @@ public class TestCase2 extends base {
 		// logo/link.
 		BkstChkoutShippingPage sh = new BkstChkoutShippingPage(driver);
 		sh.logo().click();
-		
+
 		Assert.assertEquals(rd.title(), "Gift Ideas, Cool Gadgets, Unique Gifts for Him and Her at Brookstone");
-		log.info("Verified 6: Verify that you are taken to the site home page");
+		log.info("TC2 Verified 6: Verify that you are taken to the site home page");
 
 		// 7. In the upper right corner of the page, click either the "Shopping Cart"
 		// icon in the page header or the "View Cart" button in the mini cart.
@@ -89,8 +93,8 @@ public class TestCase2 extends base {
 		sh.BacktoCart().click();
 
 		Assert.assertEquals(sc.title(), "Brookstone Cart");
-		log.info("Verified 11: Verify that you are taken back to the Shopping Cart page.");
-		
+		log.info("TC2 Verified 11: Verify that you are taken back to the Shopping Cart page.");
+
 		// 12. At the Shopping Cart page, click the button to check out.
 		sc.Checkout().click();
 
@@ -101,11 +105,11 @@ public class TestCase2 extends base {
 		// 14. Again at the Shipping page, in the page header, click the "Log In" link.
 		sh.login().click();
 
-		// 
+		//
 		BkstAccountsLogin ac = new BkstAccountsLogin(driver);
 		Assert.assertEquals(ac.title(), "Brookstone Account Login");
-		log.info("Verified 15. Verify that you are taken to the My Account Login page.");
-		
+		log.info("TC2 Verified 15. Verify that you are taken to the My Account Login page.");
+
 		// 16. In the upper right corner of the page, click either the "Shopping Cart"
 		// icon in the page header or the "View Cart" button in the mini cart.
 		Actions action = new Actions(driver);
@@ -125,42 +129,50 @@ public class TestCase2 extends base {
 		// over the Customer Care phone number to confirm it is not a link.
 		// to be done
 
+		// Thread.sleep(5000);
 		sh.First_Name().sendKeys(prop.getProperty("FirstName"));
 		sh.Last_Name().sendKeys(prop.getProperty("LastName"));
-		sh.Address1().sendKeys(prop.getProperty("Address1"));
-		sh.City().sendKeys(prop.getProperty("City"));
-		sh.Zipcode().sendKeys(prop.getProperty("Zipcode"));
+		sh.Address1().sendKeys(prop.getProperty("STAddress1"));
+
+		// Thread.sleep(2000);
+		sh.City().sendKeys(prop.getProperty("STCity"));
+		sh.Select_State().click();
+		sh.SsState().click();
 		sh.Phone().sendKeys(prop.getProperty("Phone"));
-		Thread.sleep(5000);
+		sh.Zipcode().sendKeys(prop.getProperty("STZipcode"));
+
 		sh.Continue().click();
 
+		// Thread.sleep(10000);
 		BkstChkoutBillingPage bl = new BkstChkoutBillingPage(driver);
-		
-		Assert.assertEquals(bl.title(), "Brookstone Checkout Billing");
-		log.info("Verified 15. Verify that you are taken to the My Account Login page.");
-		
+		// Assert.assertEquals(bl.title(), "Brookstone Checkout Billing");
+		log.info("TC2 Verified 15. Verify that you are taken to the My Account Login page.");
 
 		bl.Email().sendKeys(prop.getProperty("Email"));
+
+		bl.PromoCode().sendKeys(prop.getProperty("Offer2"));
+		bl.Apply().click();
+
 		String FullName = prop.getProperty("FirstName") + " " + prop.getProperty("LastName");
 		bl.CardName().sendKeys(FullName);
-		bl.CardNumber().sendKeys(prop.getProperty("VisaCardNo"));
-		bl.CardCVV().sendKeys(prop.getProperty("VisaCardCvv"));
+		bl.CardNumber().sendKeys(prop.getProperty("DiscCardNo"));
+		bl.CardCVV().sendKeys(prop.getProperty("DiscCardCvv"));
 		bl.dropDown().click();
 		bl.CardExpYear().click();
 
 		bl.ContinueChkout().click();
 
 		BkstSubmitOrder sb = new BkstSubmitOrder(driver);
-/*		sb.submitOrder().click();
+		sb.submitOrder().click();
 		sb.customerSurvey().click();
 		sb.backToBrookstone().click();
 
 		Assert.assertEquals(rd.title(), "Gift Ideas, Cool Gadgets, Unique Gifts for Him and Her at Brookstone");
-		log.info("Verified 23. Verify that you are taken to the site home page.");
-*/	
+		log.info("TC2 Verified 23. Verify that you are taken to the site home page.");
+
 	}
 
-	@AfterTest
+	@AfterTest(groups = { "Smoke" })
 	public void teardown() {
 
 		driver.close();

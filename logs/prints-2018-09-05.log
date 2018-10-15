@@ -1,7 +1,0 @@
-23:18:54.893 [main] INFO  resources.base - Driver is initialized
-23:18:58.805 [main] INFO  resources.base - Navigated to Home page
-23:19:43.524 [main] INFO  resources.base - Driver is initialized
-23:19:50.693 [main] INFO  resources.base - Navigated to Home page
-23:20:29.904 [main] INFO  resources.base - Verified 6: Verify that you are taken to the site home page
-23:20:51.144 [main] INFO  resources.base - Verified 11: Verify that you are taken back to the Shopping Cart page.
-23:21:04.297 [main] INFO  resources.base - Verified 15. Verify that you are taken to the My Account Login page.

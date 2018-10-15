@@ -1,17 +1,81 @@
+package UAT.BrookstoneTests;
 
-	@BeforeTest
+import java.io.IOException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import pageObjects.BkstChkoutBillingPage;
+import pageObjects.BkstChkoutOptionstPage;
+import pageObjects.BkstChkoutShippingPage;
+import pageObjects.BkstMainpage;
+import pageObjects.BkstProduct;
+import pageObjects.BkstProductsOutline;
+import pageObjects.BkstSubmitOrder;
+import resources.base;
+
+public class TestCase3 extends base {
+	
+	public static Logger log =LogManager.getLogger(base.class.getName());
+
+
+	@BeforeTest(groups= {"Smoke"})
 	public void initialize() throws IOException {
 
 		driver = initializeDriver();
-		log.info("Driver is initialized");
+		//log.info("Driver is initialized");
 
 		// 1. Go to Brookstone.com.
-		driver.get(prop.getProperty("urlprod"));
+		String env = prop.getProperty("environment");
+		driver.get(prop.getProperty(env));
 		driver.manage().window().maximize();
-		log.info("Navigated to Home page");
+		//log.info("Navigated to Home page");
 
 	}
 	
+	
+	@AfterTest(groups= {"Smoke"})
+	public void teardown() {
+
+		driver.close();
+		driver = null;
+
+	}
+
+@Test(groups= {"Smoke"})
+	
+	public void TC3() throws InterruptedException, IOException {
+	    BkstMainpage rd = new BkstMainpage(driver);
+		rd.closeButton().click();
+		rd.ProdLine().click();
+		
+		BkstProductsOutline mg = new BkstProductsOutline(driver);
+		mg.Prod1().click();
+		
+		BkstProduct pd = new BkstProduct(driver);
+		pd.Add_to_cart().click();
+		Thread.sleep(5000);
+		pd.Go_to_chkout().click();
+		
+		BkstChkoutOptionstPage ck = new BkstChkoutOptionstPage(driver);
+		Assert.assertEquals(ck.title(), "Brookstone Account Login");
+		log.info("TC1 Verified 4. Verify that you are taken to the Secure Checkout landing page");
+		
+		ck.Guest_chkout().click();
+		
+		BkstChkoutShippingPage sh = new BkstChkoutShippingPage(driver);
+	
+	}
+
+
+}
+
+	
+
+
 
 		BkstChkoutShippingPage sh = new BkstChkoutShippingPage(driver);
 
@@ -44,10 +108,3 @@
 		
 		
 		
-@AfterTest
-	public void teardown() {
-
-		driver.close();
-		driver = null;
-
-	}

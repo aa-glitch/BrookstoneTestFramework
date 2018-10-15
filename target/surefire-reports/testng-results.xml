@@ -1,41 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="142901" started-at="2018-09-06T21:54:18Z" finished-at="2018-09-06T21:56:41Z">
+  <suite name="Suite" duration-ms="454761" started-at="2018-10-15T18:30:50Z" finished-at="2018-10-15T18:38:25Z">
     <groups>
+      <group name="Smoke">
+        <method signature="TestCase1.TC1()[pri:0, instance:UAT.BrookstoneTests.TestCase1@16ec5519]" name="TC1" class="UAT.BrookstoneTests.TestCase1"/>
+        <method signature="TestCase2.TC2()[pri:0, instance:UAT.BrookstoneTests.TestCase2@4d9e68d0]" name="TC2" class="UAT.BrookstoneTests.TestCase2"/>
+        <method signature="TestCase3.TC3and4()[pri:0, instance:UAT.BrookstoneTests.TestCase3@7fa98a66]" name="TC3and4" class="UAT.BrookstoneTests.TestCase3"/>
+        <method signature="TestCase74.TC74()[pri:0, instance:UAT.BrookstoneTests.TestCase74@6e20b53a]" name="TC74" class="UAT.BrookstoneTests.TestCase74"/>
+      </group> <!-- Smoke -->
     </groups>
-    <test name="TC#1 Checkout Header - Verify the layout of the header on the checkout pages (Shipping, Billing, Submit Order, Confirmation)." duration-ms="55862" started-at="2018-09-06T21:54:18Z" finished-at="2018-09-06T21:55:14Z">
+    <test name="TC#1 Checkout Header - Verify the layout of the header on the checkout pages (Shipping, Billing, Submit Order, Confirmation)." duration-ms="103720" started-at="2018-10-15T18:30:50Z" finished-at="2018-10-15T18:32:34Z">
       <class name="UAT.BrookstoneTests.TestCase1">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:UAT.BrookstoneTests.TestCase1@30ee2816]" name="initialize" is-config="true" duration-ms="8002" started-at="2018-09-06T21:54:18Z" finished-at="2018-09-06T21:54:26Z">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:UAT.BrookstoneTests.TestCase1@16ec5519]" name="initialize" is-config="true" duration-ms="30524" started-at="2018-10-15T18:30:50Z" finished-at="2018-10-15T18:31:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TC1()[pri:0, instance:UAT.BrookstoneTests.TestCase1@30ee2816]" name="TC1" duration-ms="47752" started-at="2018-09-06T21:54:26Z" finished-at="2018-09-06T21:55:14Z">
+        <test-method status="PASS" signature="TC1()[pri:0, instance:UAT.BrookstoneTests.TestCase1@16ec5519]" name="TC1" duration-ms="72520" started-at="2018-10-15T18:31:21Z" finished-at="2018-10-15T18:32:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC1 -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:UAT.BrookstoneTests.TestCase1@30ee2816]" name="teardown" is-config="true" duration-ms="86" started-at="2018-09-06T21:55:14Z" finished-at="2018-09-06T21:55:14Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:UAT.BrookstoneTests.TestCase1@16ec5519]" name="teardown" is-config="true" duration-ms="651" started-at="2018-10-15T18:32:33Z" finished-at="2018-10-15T18:32:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- UAT.BrookstoneTests.TestCase1 -->
     </test> <!-- TC#1 Checkout Header - Verify the layout of the header on the checkout pages (Shipping, Billing, Submit Order, Confirmation). -->
-    <test name="TC#2 Checkout Header - Verify the functionality of header elements on the checkout pages." duration-ms="87021" started-at="2018-09-06T21:55:14Z" finished-at="2018-09-06T21:56:41Z">
+    <test name="TC#2 Checkout Header - Verify the functionality of header elements on the checkout pages." duration-ms="160994" started-at="2018-10-15T18:32:34Z" finished-at="2018-10-15T18:35:15Z">
       <class name="UAT.BrookstoneTests.TestCase2">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:UAT.BrookstoneTests.TestCase2@3c407114]" name="initialize" is-config="true" duration-ms="6369" started-at="2018-09-06T21:55:14Z" finished-at="2018-09-06T21:55:20Z">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:UAT.BrookstoneTests.TestCase2@4d9e68d0]" name="initialize" is-config="true" duration-ms="21782" started-at="2018-10-15T18:32:34Z" finished-at="2018-10-15T18:32:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TC2()[pri:0, instance:UAT.BrookstoneTests.TestCase2@3c407114]" name="TC2" duration-ms="80592" started-at="2018-09-06T21:55:20Z" finished-at="2018-09-06T21:56:41Z">
+        <test-method status="PASS" signature="TC2()[pri:0, instance:UAT.BrookstoneTests.TestCase2@4d9e68d0]" name="TC2" duration-ms="138704" started-at="2018-10-15T18:32:56Z" finished-at="2018-10-15T18:35:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC2 -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:UAT.BrookstoneTests.TestCase2@3c407114]" name="teardown" is-config="true" duration-ms="59" started-at="2018-09-06T21:56:41Z" finished-at="2018-09-06T21:56:41Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:UAT.BrookstoneTests.TestCase2@4d9e68d0]" name="teardown" is-config="true" duration-ms="506" started-at="2018-10-15T18:35:14Z" finished-at="2018-10-15T18:35:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- UAT.BrookstoneTests.TestCase2 -->
     </test> <!-- TC#2 Checkout Header - Verify the functionality of header elements on the checkout pages. -->
+    <test name="TC#3 Checkout SubHeader - Verify the display of the checkout subheader on checkout pages (Shipping, Billing, Submit Order, Confirmation).." duration-ms="111116" started-at="2018-10-15T18:35:15Z" finished-at="2018-10-15T18:37:06Z">
+      <class name="UAT.BrookstoneTests.TestCase3">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:UAT.BrookstoneTests.TestCase3@7fa98a66]" name="initialize" is-config="true" duration-ms="32542" started-at="2018-10-15T18:35:15Z" finished-at="2018-10-15T18:35:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="TC3and4()[pri:0, instance:UAT.BrookstoneTests.TestCase3@7fa98a66]" name="TC3and4" duration-ms="78065" started-at="2018-10-15T18:35:47Z" finished-at="2018-10-15T18:37:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC3and4 -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:UAT.BrookstoneTests.TestCase3@7fa98a66]" name="teardown" is-config="true" duration-ms="506" started-at="2018-10-15T18:37:05Z" finished-at="2018-10-15T18:37:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- UAT.BrookstoneTests.TestCase3 -->
+    </test> <!-- TC#3 Checkout SubHeader - Verify the display of the checkout subheader on checkout pages (Shipping, Billing, Submit Order, Confirmation).. -->
+    <test name="TC#74 Gifts" duration-ms="78879" started-at="2018-10-15T18:37:06Z" finished-at="2018-10-15T18:38:25Z">
+      <class name="UAT.BrookstoneTests.TestCase74">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:UAT.BrookstoneTests.TestCase74@6e20b53a]" name="initialize" is-config="true" duration-ms="28177" started-at="2018-10-15T18:37:06Z" finished-at="2018-10-15T18:37:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="TC74()[pri:0, instance:UAT.BrookstoneTests.TestCase74@6e20b53a]" name="TC74" duration-ms="48383" started-at="2018-10-15T18:37:34Z" finished-at="2018-10-15T18:38:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC74 -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:UAT.BrookstoneTests.TestCase74@6e20b53a]" name="teardown" is-config="true" duration-ms="2317" started-at="2018-10-15T18:38:22Z" finished-at="2018-10-15T18:38:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- UAT.BrookstoneTests.TestCase74 -->
+    </test> <!-- TC#74 Gifts -->
   </suite> <!-- Suite -->
 </testng-results>

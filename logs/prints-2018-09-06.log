@@ -1,6 +1,0 @@
-17:22:49.066 [main] INFO  resources.base - Driver is initialized
-17:22:54.086 [main] INFO  resources.base - Navigated to Home page
-17:23:19.520 [main] INFO  resources.base - Verified 4. Verify that you are taken to the Secure Checkout landing page
-17:23:31.579 [main] INFO  resources.base - Verified 10. At the Billing page, verify that the page header matches that from the Shipping page
-17:23:41.939 [main] INFO  resources.base - Driver is initialized
-17:23:46.272 [main] INFO  resources.base - Navigated to Home page
